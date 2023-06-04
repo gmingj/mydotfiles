@@ -7,7 +7,7 @@ set -e
 
 # install dev utils
 echo "-----> Installing dev utils..."
-sudo apt install -y net-tools inetutils-tools curl git vim build-essential cmake tldr htop bat exa zsh silversearcher-ag autojump global
+apt install -y net-tools inetutils-tools curl git vim build-essential cmake tldr htop bat exa zsh silversearcher-ag autojump global
 
 # install vimrc
 echo "-----> Installing vimrc..."
