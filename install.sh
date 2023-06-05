@@ -26,7 +26,6 @@ git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git $ZS
 
 echo "-----> Installing zsh theme 'powerlevel10k'..."
 git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-# p10k configure
 
 echo "-----> Customizing ohmyzsh..."
 sed -i '/ZSH_THEME=\"robbyrussell\"/cZSH_THEME=\"powerlevel10k/powerlevel10k\"' $HOME/.zshrc
@@ -50,3 +49,6 @@ echo "-----> Installing tmux..."
 git clone --depth=1 https://github.com/gmingj/.tmux.git -b mytmux ~/.tmux
 ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
 ln -s -f ~/.tmux/.tmux.conf.local ~/.tmux.conf.local
+
+# p10k configure
+/bin/zsh
