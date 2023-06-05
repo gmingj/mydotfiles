@@ -8,19 +8,22 @@ Development environment configuration for vim, tmux, zsh...
 - zsh
 - autojump
 
-## Frequently used utils
-```shell
-apt install -y net-tools inetutils-tools curl git vim build-essential cmake tldr htop bat exa zsh silversearcher-ag autojump global
-```
-
 ## Usage
 ```shell
 apt update && apt install -y curl git vim autojump zsh
-git clone --depth=1 https://github.com/gmingj/mydotfiles.git && cd mydotfiles
-source proxyenv
+```
+```shell
+git clone --depth=1 https://github.com/gmingj/mydotfiles.git && cd mydotfiles && source proxyenv
+```
+```shell
 setp
+```
+```shell
 sh install.sh < input
-zsh # startup with p10k configure
+```
+```shell
+# startup with p10k configure
+zsh
 ```
 
 ## Example
@@ -187,3 +190,9 @@ remote: Compressing objects: 100% (8/8), done.
 remote: Total 11 (delta 0), reused 8 (delta 0), pack-reused 0
 Receiving objects: 100% (11/11), 27.05 KiB | 82.00 KiB/s, done.
 ```
+
+## Frequently used utils
+```shell
+apt install -y net-tools inetutils-tools curl git vim build-essential cmake tldr htop bat exa zsh silversearcher-ag autojump global
+```
+
