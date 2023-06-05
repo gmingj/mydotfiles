@@ -34,11 +34,11 @@ append_text() {
 append_text ""
 append_text "# Set/Unset proxy aliases"
 append_text "HOSTIP=\$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')"
-append_text 'export https_proxy="http://${HOSTIP}:7890"; export http_proxy="http://${HOSTIP}:7890"; export all_proxy="socks5://${HOSTIP}:7890"; export ALL_PROXY="socks5://${HOSTIP}:7890";'
-append_text 'unset https_proxy; unset http_proxy; unset all_proxy; unset ALL_PROXY;'
+append_text "alias setp='export https_proxy=\"http://\${HOSTIP}:7890\"; export http_proxy=\"http://\${HOSTIP}:7890\"; export all_proxy=\"socks5://\${HOSTIP}:7890\"; export ALL_PROXY=\"socks5://\${HOSTIP}:7890\";'"
+append_text "alias unsetp='unset https_proxy; unset http_proxy; unset all_proxy; unset ALL_PROXY;'"
 append_text ""
 append_text "# Fzf"
-append_text '[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh'
+append_text "[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh"
 append_text "export FZF_DEFAULT_COMMAND='ag -i --hidden -l -g \"\"'"
 append_text "export FZF_DEFAULT_OPTS=\"--layout=reverse --preview '(bat --style=numbers --color=always {} || highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500'\""
 append_text ""

@@ -19,11 +19,7 @@ git clone --depth=1 https://github.com/gmingj/mydotfiles.git && cd mydotfiles &&
 setp
 ```
 ```shell
-sh install.sh < input
-```
-```shell
-# startup with p10k configure
-zsh
+sh install.sh < input && zsh
 ```
 
 ## Example
