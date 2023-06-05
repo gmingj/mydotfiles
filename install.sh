@@ -5,10 +5,6 @@ set -e
 # source proxyenv
 # setp
 
-# install dev utils
-echo "-----> Installing dev utils..."
-apt install -y net-tools inetutils-tools curl git vim build-essential cmake tldr htop bat exa zsh silversearcher-ag autojump global
-
 echo "-----> Installing fzf..."
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
