@@ -20,6 +20,7 @@ git clone --depth=1 https://github.com/gmingj/mydotfiles.git && cd mydotfiles
 source proxyenv
 setp
 sh install.sh < input
+zsh # startup with p10k configure
 ```
 
 ## Example
