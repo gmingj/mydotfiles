@@ -15,9 +15,10 @@ apt install -y net-tools inetutils-tools curl git vim build-essential cmake tldr
 
 ## Usage
 ```shell
-git clone --depth=1 https://github.com/gmingj/mydotfiles.git
-source proxyenv # optional
-cd mydotfiles
+apt update && apt install -y curl git vim autojump zsh
+git clone --depth=1 https://github.com/gmingj/mydotfiles.git && cd mydotfiles
+source proxyenv
+setp
 sh install.sh < input
 ```
 

@@ -50,5 +50,4 @@ git clone --depth=1 https://github.com/gmingj/.tmux.git -b mytmux ~/.tmux
 ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
 ln -s -f ~/.tmux/.tmux.conf.local ~/.tmux.conf.local
 
-# p10k configure
-/bin/zsh
+zsh # p10k configure
