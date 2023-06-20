@@ -13,13 +13,7 @@ Development environment configuration for vim, tmux, zsh...
 apt update && apt install -y curl git vim autojump zsh
 ```
 ```shell
-git clone --depth=1 https://github.com/gmingj/mydotfiles.git && cd mydotfiles && source proxyenv
-```
-```shell
-setp
-```
-```shell
-sh install.sh < input && zsh
+echo -e "y\ny\ny\nY\nexit\n" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/gmingj/mydotfiles/main/install.sh)"
 ```
 
 ## Example

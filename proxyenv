@@ -1,5 +1,0 @@
-# Set/Unset proxy aliases
-HOSTIP=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')
-alias setp='export https_proxy="http://${HOSTIP}:7890"; export http_proxy="http://${HOSTIP}:7890"; export all_proxy="socks5://${HOSTIP}:7890"; export ALL_PROXY="socks5://${HOSTIP}:7890";'
-alias unsetp='unset https_proxy; unset http_proxy; unset all_proxy; unset ALL_PROXY;'
-
