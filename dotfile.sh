@@ -1,13 +1,5 @@
 #/bin/bash
 
-setproxy() {
-    HOSTIP=$(cat /etc/resolv.conf |grep -oP '(?<=nameserver\ ).*')
-    export https_proxy="http://${HOSTIP}:7890"
-    export http_proxy="http://${HOSTIP}:7890"
-    export all_proxy="socks5://${HOSTIP}:7890"
-    export ALL_PROXY="socks5://${HOSTIP}:7890"
-}
-
 append_text() {
     echo $1 >> $HOME/.zshrc
 }
@@ -62,6 +54,5 @@ customize()
 }
 
 set -e
-setproxy
 customize
 
