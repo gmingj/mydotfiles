@@ -7,16 +7,17 @@ Development environment configuration for vim, tmux, zsh...
 - vim
 - zsh
 - autojump
+- tmux
 
 ## Usage
 ```shell
 source proxyenv
 ```
 ```shell
-apt update && apt install -y curl git vim autojump zsh
+apt update && apt install -y curl git vim autojump zsh tmux
 ```
 ```shell
-echo -e "y\ny\ny\nY\nexit\n" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/gmingj/mydotfiles/main/dotfile.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/gmingj/mydotfiles/main/install.sh)"
 ```
 
 ## Example
