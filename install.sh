@@ -68,10 +68,10 @@ ln -s ~/.fzf ~/.vim_runtime/my_plugins/fzf
 git clone --depth 1 https://github.com/preservim/tagbar.git -b v3.1.1 ~/.vim_runtime/my_plugins/tagbar
 git clone --depth 1 https://github.com/easymotion/vim-easymotion.git -b v3.0.1 ~/.vim_runtime/my_plugins/vim-easymotion
 git clone --depth 1 https://github.com/SirVer/ultisnips.git -b 3.2 ~/.vim_runtime/my_plugins/ultisnips
-git clone --depth 1 https://github.com/ycm-core/YouCompleteMe.git ~/.vim_runtime/my_plugins/YouCompleteMe
-cd ~/.vim_runtime/my_plugins/YouCompleteMe
-git submodule update --init --recursive
-python3 install.py --clangd-completer
+# git clone --depth 1 https://github.com/ycm-core/YouCompleteMe.git ~/.vim_runtime/my_plugins/YouCompleteMe
+# cd ~/.vim_runtime/my_plugins/YouCompleteMe
+# git submodule update --init --recursive
+# python3 install.py --clangd-completer
 curl -o ~/.vim_runtime/my_configs.vim -L https://raw.githubusercontent.com/gmingj/mydotfiles/main/my_configs.vim
 
 # Setup git
