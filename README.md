@@ -5,7 +5,7 @@ Development environment configuration for vim, tmux, zsh...
 ## Dependence
 
 ```shell
-sudo apt update && sudo apt install -y curl git tmux zsh vim autojump bat silversearcher-ag global cmake build-essential python3-dev python3-pip universal-ctags
+sudo apt update && sudo apt install -y curl git tmux zsh vim autojump bat silversearcher-ag global cmake build-essential python3-dev python3-pip python3-pygments universal-ctags
 ```
 
 ## Usage
