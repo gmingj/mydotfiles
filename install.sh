@@ -33,7 +33,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git -b v1.20.0 ~/.o
 
 sed -i -e "/^ZSH_THEME=/s/.*/ZSH_THEME=\"powerlevel10k\/powerlevel10k\"/" \
     -e "/^plugins=/s/.*/plugins=(git autojump zsh-autosuggestions zsh-syntax-highlighting tmux)/" \
-    -e "/^source \$ZSH\/oh-my-zsh.sh/i\ZSH_TMUX_AUTOSTART=true" ~/.zshrc
+    -e "/^source \$ZSH\/oh-my-zsh.sh/i\ZSH_TMUX_AUTOQUIT=false" ~/.zshrc
 
 if [ -n "$PROXYDNS" ]; then
 cat << EOF >> ~/.zshrc
@@ -49,9 +49,9 @@ cat << EOF >> ~/.zshrc
 export FZF_DEFAULT_COMMAND='ag -i --hidden -l -a -g ""'
 export FZF_DEFAULT_OPTS="--height 80% --layout reverse --preview '(bat --style=numbers --color=always {} || highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500'"
 
-# if no session is started, start a new session
-if which tmux >/dev/null 2>&1; then
-    test -z \${TMUX} && tmux new-session
+# if no session is started, start a new session, better than 'ZSH_TMUX_AUTOSART'
+if command -v tmux > /dev/null 2>&1 && [ -z \${TMUX} ]; then
+    tmux new-session
 fi
 EOF
 
