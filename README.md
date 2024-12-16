@@ -5,7 +5,11 @@ Development environment configuration for vim, tmux, zsh...
 ## Prerequisite
 
 ```shell
-sudo apt update && sudo apt install -y curl git tmux zsh vim autojump silversearcher-ag global bat exa cmake build-essential python3-dev python3-pip python3-pygments universal-ctags libncurses-dev net-tools cmatrix linux-headers-$(uname -r)
+sudo apt update && sudo apt install -y curl git tmux zsh vim bat exa cloc net-tools \
+    autojump silversearcher-ag global universal-ctags \
+    python3-dev python3-pip python3-pygments \
+    pandoc pandoc-plantuml-filter texlive texlive-fonts-recommended texlive-fonts-extra \
+    build-essential cmake linux-headers-$(uname -r) libncurses-dev 
 ```
 
 ## Usage
