@@ -5,7 +5,7 @@ Development environment configuration for vim, tmux, zsh...
 ## Prerequisite
 
 ```shell
-sudo apt update && sudo apt install -y curl git tmux zsh vim bat exa cloc net-tools \
+sudo apt update && sudo apt install -y curl git tmux zsh vim bat cloc net-tools \
     autojump silversearcher-ag global universal-ctags \
     python3-dev python3-pip python3-pygments \
     pandoc pandoc-plantuml-filter texlive texlive-fonts-recommended texlive-fonts-extra \
