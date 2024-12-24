@@ -20,6 +20,8 @@ try
 catch
 endtry
 
+imap jj <Esc>
+
 nmap <silent> <leader>tt :TagbarToggle<CR>
 let g:tagbar_position = 'left'
 
@@ -55,12 +57,20 @@ noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
 noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s --bottom --cword --regexMode", "")<CR><CR>
 
 " should use `Leaderf gtags --update` first
-let g:Lf_GtagsAutoGenerate = 1
+let g:Lf_GtagsAutoGenerate = 0
 let g:Lf_Gtagslabel = 'native-pygments'
-noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s", expand("<cword>"))<CR><CR>
-noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s", expand("<cword>"))<CR><CR>
+noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
+noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
 noremap <leader>fg :<C-U><C-R>=printf("Leaderf! gtags -g %s", expand("<cword>"))<CR><CR>
 noremap <leader>fG :<C-U><C-R>=printf("Leaderf gtags %s", "")<CR><CR>
 noremap <leader>fo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
 noremap <leader>fn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR><CR>
 noremap <leader>fp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>
+
+" UltiSnips
+" let g:UltiSnipsExpandTrigger="<c-j>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Codeium
+" let g:codeium_disable_bindings = 1
