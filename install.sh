@@ -72,7 +72,7 @@ git clone --depth 1 https://github.com/Yggdroot/LeaderF.git ~/.vim_runtime/my_pl
 git clone --depth 1 https://github.com/preservim/tagbar.git ~/.vim_runtime/my_plugins/tagbar
 git clone --depth 1 https://github.com/easymotion/vim-easymotion.git ~/.vim_runtime/my_plugins/vim-easymotion
 git clone --depth 1 https://github.com/Exafunction/codeium.vim.git ~/.vim_runtime/my_plugins/codeium
-# git clone --depth 1 https://github.com/SirVer/ultisnips.git ~/.vim_runtime/my_plugins/ultisnips
+git clone --depth 1 https://github.com/SirVer/ultisnips.git ~/.vim_runtime/my_plugins/ultisnips
 git clone --depth 1 https://github.com/ycm-core/YouCompleteMe.git ~/.vim_runtime/my_plugins/YouCompleteMe
 cd ~/.vim_runtime/my_plugins/YouCompleteMe
 git submodule update --init --recursive

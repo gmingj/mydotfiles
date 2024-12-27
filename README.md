@@ -9,7 +9,8 @@ sudo apt update && sudo apt install -y curl git tmux zsh vim bat cloc net-tools 
     autojump silversearcher-ag global universal-ctags \
     python3-dev python3-pip python3-pygments \
     pandoc pandoc-plantuml-filter texlive texlive-fonts-recommended texlive-fonts-extra \
-    build-essential cmake linux-headers-$(uname -r) libncurses-dev 
+    doxygen graphviz \
+    build-essential cmake autoconf automake libtool pkg-config linux-headers-$(uname -r)
 ```
 
 ## Usage
