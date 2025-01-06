@@ -28,7 +28,7 @@ sed -i -e "/^tmux_conf_theme=enabled$/s/enabled/disabled/" \
     -e "/^# -- custom variables/i\set -g @plugin 'nordtheme/tmux'\nbind-key g setw synchronize-panes" ~/.tmux.conf.local
 
 # Setup oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
@@ -47,6 +47,15 @@ EOF
 fi
 
 cat << EOF >> ~/.zshrc
+# Alias for docker
+alias dbuild='docker run --rm -v \$PWD:\$PWD -w \$PWD buildenv-ubuntu:latest'
+drun() {
+    docker run --rm -v \$PWD:\$PWD -w \$PWD -it --detach-keys="ctrl-q,q" --name "\$1" --hostname "\$1" runtime-ubuntu:latest
+}
+drunarm() {
+    docker run --rm -v \$PWD:\$PWD -w \$PWD -it --detach-keys='ctrl-q,q' --name "\$1" --hostname "\$1" --platform linux/arm64 runtime-arm-ubuntu:latest
+}
+
 # Fzf
 export FZF_DEFAULT_COMMAND='ag -i --hidden -l -a -g ""'
 export FZF_DEFAULT_OPTS="--height 80% --layout reverse --preview '(bat --style=numbers --color=always {} || highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500'"
@@ -63,7 +72,7 @@ git clone --depth=1 https://github.com/junegunn/fzf.git ~/.fzf
 
 # Setup vimrc
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-sh ~/.vim_runtime/install_awesome_vimrc.sh
+bash ~/.vim_runtime/install_awesome_vimrc.sh
 curl -o ~/.vim_runtime/my_configs.vim -L https://raw.githubusercontent.com/gmingj/mydotfiles/main/my_configs.vim
 
 ln -s ~/.fzf ~/.vim_runtime/my_plugins/fzf
