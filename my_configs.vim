@@ -74,3 +74,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Codeium
 " let g:codeium_disable_bindings = 1
+
+" quickly paste from system clipboard
+nnoremap <silent> <leader>P :%!xclip -o -selection clipboard<CR>
+vnoremap <silent> <leader>Y :w !xclip -selection clipboard<CR><CR>

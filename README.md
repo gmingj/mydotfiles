@@ -5,12 +5,13 @@ Development environment configuration for vim, tmux, zsh...
 ## Prerequisite
 
 ```shell
-sudo apt update && sudo apt install -y curl git tmux zsh vim bat cloc net-tools \
-    autojump silversearcher-ag global universal-ctags \
-    python3-dev python3-pip python3-pygments \
+sudo apt update && sudo apt install -y curl git tmux zsh vim \
+    autojump silversearcher-ag global universal-ctags xclip \
+    build-essential cmake autoconf automake libtool pkg-config \
     pandoc pandoc-plantuml-filter texlive texlive-fonts-recommended texlive-fonts-extra \
     doxygen graphviz \
-    build-essential cmake autoconf automake libtool pkg-config linux-headers-$(uname -r)
+    python3-dev python3-pip python3-pygments \
+    iproute2 iputils-ping cloc bat
 ```
 
 ## Usage
