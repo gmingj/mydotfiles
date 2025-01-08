@@ -3,11 +3,10 @@
 PROXYDNS=$1
 
 # Test connectivity
-# -w "%{http_code}" represents output HTTP code
-HTTPCODE=$(curl -m 3 -s -o /dev/null -w "%{http_code}" https://google.com)
-if [[ $HTTPCODE -lt 200 || $HTTPCODE -gt 299 ]]; then
-    echo "Connectivity test failed. Please check your proxy settings and try again."
-    exit 1
+URL="https://www.google.com"
+HTTPCODE=$(curl -o /dev/null -s -w "%{http_code}\n" --connect-timeout 5 $URL)
+if [ $HTTPCODE -lt 200 ]; then
+    echo "Google is not accessible. Proxy may not be working."
 fi
 
 # Setup tmux (ohmytmux), if needed install tmux plugins mannually: <prefix> + I
@@ -28,7 +27,7 @@ sed -i -e "/^tmux_conf_theme=enabled$/s/enabled/disabled/" \
     -e "/^# -- custom variables/i\set -g @plugin 'nordtheme/tmux'\nbind-key g setw synchronize-panes" ~/.tmux.conf.local
 
 # Setup oh-my-zsh
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+curl -sL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
@@ -73,7 +72,7 @@ git clone --depth=1 https://github.com/junegunn/fzf.git ~/.fzf
 # Setup vimrc
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 bash ~/.vim_runtime/install_awesome_vimrc.sh
-curl -o ~/.vim_runtime/my_configs.vim -L https://raw.githubusercontent.com/gmingj/mydotfiles/main/my_configs.vim
+curl -sL https://raw.githubusercontent.com/gmingj/mydotfiles/main/my_configs.vim -o ~/.vim_runtime/my_configs.vim
 
 ln -s ~/.fzf ~/.vim_runtime/my_plugins/fzf
 git clone --depth 1 https://github.com/nordtheme/vim.git ~/.vim_runtime/my_plugins/nordtheme
