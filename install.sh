@@ -24,7 +24,8 @@ sed -i -e "/^tmux_conf_theme=enabled$/s/enabled/disabled/" \
     -e "/^# unbind C-a$/s/# //" \
     -e "/^# unbind C-b$/s/# //" \
     -e "s/^# set -g prefix C-a/set -g prefix C-x/g" \
-    -e "/^# -- custom variables/i\set -g @plugin 'nordtheme/tmux'\nbind-key g setw synchronize-panes" ~/.tmux.conf.local
+    -e "/^# -- custom variables/i\set -g @plugin 'nordtheme/tmux'\nbind-key g setw synchronize-panes" \
+    -e "/^# -- custom variables/i\bind-key p run-shell \"tmux set-buffer \\\"\$(xclip -o -selection clipboard)\\\"; tmux paste-buffer\"" ~/.tmux.conf.local
 
 # Setup oh-my-zsh
 curl -sL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash

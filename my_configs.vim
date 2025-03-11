@@ -20,7 +20,7 @@ try
 catch
 endtry
 
-imap jj <Esc>
+inoremap jk <Esc>
 
 nmap <silent> <leader>tt :TagbarToggle<CR>
 let g:tagbar_position = 'left'
