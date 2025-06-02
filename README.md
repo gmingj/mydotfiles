@@ -1,34 +1,144 @@
-# Dotfiles
+# WSL/Debian Development Environment
 
-Development environment configuration for vim, tmux, zsh...
+🚀 **One-command deployment of complete development environment**
 
-## Prerequisite
+## Features
 
-```shell
-sudo apt update && sudo apt install -y curl git tmux zsh vim \
-    autojump silversearcher-ag global universal-ctags xclip \
-    build-essential cmake autoconf automake libtool pkg-config \
-    python3-dev python3-pip python3-pygments \
-    iproute2 iputils-ping cloc bat figlet htop bmon jq
+- **Single file solution**: All functionality integrated in one script
+- **One-command install**: `curl -fsSL ... | bash`
+- **One-command uninstall**: `curl -fsSL ... | bash -s -- --uninstall` 
+- **Proxy support**: Optimized for restricted network environments
+- **Comprehensive tools**: tmux, zsh, vim, fzf and development tools
+
+## Included Tools
+
+### System Tools
+- `tmux` with oh-my-tmux configuration (Ctrl-x prefix)
+- `zsh` with oh-my-zsh + powerlevel10k theme
+- `vim` with awesome vimrc + plugin ecosystem
+- `fzf` fuzzy finder
+- `git`, `bat`, `htop`, `ag` and other essential tools
+
+### Vim Plugins
+- Nord theme for unified interface
+- LeaderF file navigation (`<leader>ff`)
+<!-- - YouCompleteMe code completion -->
+- Tagbar code structure (`<leader>tt`)
+- EasyMotion fast navigation
+<!-- - Codeium AI assistance -->
+- UltiSnips code snippets
+
+## Quick Start
+
+### Installation
+
+```bash
+# Basic installation
+curl -fsSL https://raw.githubusercontent.com/gmingj/mydotfiles/main/setup.sh | bash
+
+# Installation with proxy
+curl -fsSL https://raw.githubusercontent.com/gmingj/mydotfiles/main/setup.sh | bash -s -- YOUR_PROXY_IP
 ```
 
-options
-```
-sudo apt install -y docker.io \
-pandoc pandoc-plantuml-filter texlive texlive-fonts-recommended texlive-fonts-extra \
-doxygen graphviz
-```
+### Uninstall
 
-## Usage
-
-```shell
-curl -sL https://raw.githubusercontent.com/gmingj/mydotfiles/main/install.sh | bash
+```bash
+# Complete uninstall
+curl -fsSL https://raw.githubusercontent.com/gmingj/mydotfiles/main/setup.sh | bash -s -- --uninstall
 ```
 
-with proxy (optional)
-```shell
-PROXYDNS=<IPADDR>
-export https_proxy="http://${PROXYDNS}:7890"; export http_proxy="http://${PROXYDNS}:7890"; export all_proxy="socks5://${PROXYDNS}:7890"; export ALL_PROXY="socks5://${PROXYDNS}:7890"
+### Help
 
-curl -sL https://raw.githubusercontent.com/gmingj/mydotfiles/main/install.sh | bash -s -- $PROXYDNS
+```bash
+# View usage instructions
+curl -fsSL https://raw.githubusercontent.com/gmingj/mydotfiles/main/setup.sh | bash -s -- --help
 ```
+
+## Project Structure
+
+```
+mydotfiles/
+├── setup.sh            # Single file solution (includes install/uninstall/config)
+├── README.md           # Documentation
+└── LICENSE             # License file
+```
+
+## Key Shortcuts
+
+### Tmux
+- `Ctrl-x`: tmux prefix key (replaces default Ctrl-b)
+- `Ctrl-x g`: synchronize input across all panes
+- `Ctrl-x p`: paste from system clipboard
+
+### Vim
+- `jk`: exit insert mode
+- `<leader>tt`: toggle tagbar
+- `<leader>ff`: file finder (LeaderF)
+- `<leader>fm`: recent files
+- `<leader>fb`: buffer list
+- `<leader>P`: paste from system clipboard
+- `<leader>Y`: copy to system clipboard
+
+### Automatic Features
+- vim integration with fzf file finder
+- System clipboard integration
+- Automatic proxy configuration (setp/unsetp aliases)
+
+## Proxy Configuration
+
+### Install with Proxy
+```bash
+curl -fsSL https://raw.githubusercontent.com/gmingj/mydotfiles/main/setup.sh | bash -s -- YOUR_PROXY_IP
+```
+
+### Runtime Proxy Switching
+After installation, use these aliases:
+```bash
+setp     # Enable proxy
+unsetp   # Disable proxy
+```
+
+## Troubleshooting
+
+### Check Installation
+```bash
+which zsh tmux vim fzf git ag
+ls -la ~/.oh-my-zsh ~/.vim_runtime ~/.fzf
+```
+
+### YouCompleteMe Issues
+```bash
+cd ~/.vim_runtime/my_plugins/YouCompleteMe
+python3 install.py --clangd-completer
+```
+
+### Proxy Connection Test
+```bash
+curl -s --connect-timeout 5 https://www.google.com
+```
+
+### Reinstallation
+```bash
+# First uninstall
+curl -fsSL https://raw.githubusercontent.com/gmingj/mydotfiles/main/setup.sh | bash -s -- --uninstall
+
+# Then reinstall
+curl -fsSL https://raw.githubusercontent.com/gmingj/mydotfiles/main/setup.sh | bash
+```
+
+## System Requirements
+
+- Debian/Ubuntu system (designed for WSL)
+- sudo privileges for package installation
+- Internet connectivity (or proxy access)
+
+## Technical Features
+
+- **Modular design**: Clear functional blocks
+- **Error handling**: Automatic stop on errors
+- **Idempotent**: Safe to run multiple times
+- **Clean removal**: Complete configuration cleanup on uninstall
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details
